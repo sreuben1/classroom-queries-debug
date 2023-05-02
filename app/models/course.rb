@@ -10,4 +10,7 @@
 #  department_id :integer
 #
 class Course < ApplicationRecord
+  def department
+    Department.where({ :id => self.department_id }).at(0)
+  end
 end
