@@ -8,4 +8,7 @@
 #  updated_at :datetime         not null
 #
 class Department < ApplicationRecord
+  def course
+    Course.where({ :department_id => self.id })
+  end
 end

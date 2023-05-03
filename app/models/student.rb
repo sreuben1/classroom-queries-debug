@@ -10,4 +10,7 @@
 #  updated_at :datetime         not null
 #
 class Student < ApplicationRecord
+  def enrollment
+    Enrollment.where({ :student_id => self.id })
+  end
 end
